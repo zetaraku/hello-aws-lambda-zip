@@ -2,6 +2,10 @@
 
 AWS_IAM_ROLE_NAME='hello-aws-lambda-zip-role'
 
+# sleep 5
+aws iam wait role-exists \
+  --role-name "$AWS_IAM_ROLE_NAME"
+
 AWS_LAMBDA_FUNCTION_NAME='hello-aws-lambda-zip'
 AWS_LAMBDA_PACKAGE_TYPE='Zip'
 AWS_LAMBDA_ZIP_FILE='fileb://dist/index.zip'
